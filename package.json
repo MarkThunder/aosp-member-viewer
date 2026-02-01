@@ -1,8 +1,8 @@
 {
-  "name": "java-member-viewer",
-  "displayName": "Java Member Viewer",
-  "description": "Show Java class fields and methods in a side panel TreeView.",
-  "version": "0.0.1",
+  "name": "aosp-framework-helper",
+  "displayName": "AOSP Framework Helper",
+  "description": "VS Code helpers for AOSP framework navigation and analysis.",
+  "version": "0.1.0",
   "publisher": "jarico",
   "engines": {
     "vscode": "^1.85.0"
@@ -12,22 +12,61 @@
   ],
   "activationEvents": [
     "onLanguage:java",
-    "onView:javaMemberView"
+    "onView:aospJavaStructure",
+    "onView:aospMethodGraph",
+    "onView:aospSystemServices",
+    "onView:aospLifecycle",
+    "onCommand:aosp.refreshStructure",
+    "onCommand:aosp.showMethodCallGraph",
+    "onCommand:aosp.showSystemServices",
+    "onCommand:aosp.showLifecycle"
   ],
   "main": "./out/extension.js",
   "icon": "media/icon.png",
   "contributes": {
     "commands": [
       {
-        "command": "javaMemberView.revealMember",
-        "title": "Java Member Viewer: Reveal Member"
+        "command": "aosp.refreshStructure",
+        "title": "AOSP: Refresh Java Structure"
+      },
+      {
+        "command": "aosp.showMethodCallGraph",
+        "title": "AOSP: Show Method Call Graph"
+      },
+      {
+        "command": "aosp.showSystemServices",
+        "title": "AOSP: Show System Services"
+      },
+      {
+        "command": "aosp.showLifecycle",
+        "title": "AOSP: Show Framework Lifecycle"
+      },
+      {
+        "command": "aosp.revealLine",
+        "title": "AOSP: Reveal Line"
+      },
+      {
+        "command": "aosp.openFileAtLine",
+        "title": "AOSP: Open File At Line"
       }
     ],
     "views": {
       "explorer": [
         {
-          "id": "javaMemberView",
-          "name": "Java Members"
+          "id": "aospJavaStructure",
+          "name": "AOSP Java Structure"
+        },
+        {
+          "id": "aospMethodGraph",
+          "name": "AOSP Method Call Graph"
+        },
+        {
+          "id": "aospSystemServices",
+          "name": "AOSP System Services"
+        },
+        {
+          "id": "aospLifecycle",
+          "name": "AOSP Lifecycle"
         }
       ]
     }
