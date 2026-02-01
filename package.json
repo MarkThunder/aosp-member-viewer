@@ -3,7 +3,7 @@
   "displayName": "Java Member Viewer",
   "description": "Show Java class fields and methods in a side panel TreeView.",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "jarico",
   "engines": {
     "vscode": "^1.85.0"
   },
