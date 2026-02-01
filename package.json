@@ -1,0 +1,50 @@
+{
+  "name": "java-member-viewer",
+  "displayName": "Java Member Viewer",
+  "description": "Show Java class fields and methods in a side panel TreeView.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:java",
+    "onView:javaMemberView"
+  ],
+  "main": "./out/extension.js",
+  "icon": "media/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "javaMemberView.revealMember",
+        "title": "Java Member Viewer: Reveal Member"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "javaMemberView",
+          "name": "Java Members"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "java-parser": "^2.3.0"
+  }
+}
